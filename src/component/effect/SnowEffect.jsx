@@ -3,8 +3,16 @@ import Snowfall from 'react-snowfall';
 
 const SnowEffect = () => {
     return (
-        <div style={{ height: '100vh'}}>
-            {/* Hiệu ứng tuyết màu hồng */}
+        <div
+            style={{
+                position: 'fixed',
+                width: '100%',
+                height: '100vh',
+                top: 0,
+                left: 0,
+                pointerEvents: 'none',
+            }}
+        >
             <Snowfall />
         </div>
     );

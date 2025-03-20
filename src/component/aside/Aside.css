@@ -1,0 +1,179 @@
+.wedding-card {
+    background: url('../../assets/backgroundsilver.jpg') center/cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.top-section {
+    font-family: var(--top-section-font);
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 331px;
+    max-width: 0;
+    animation: typing 8s steps(50, end) forwards infinite;
+    position: relative;
+    border-right: none;
+}
+
+/* Tạo border mới bằng pseudo-element */
+.top-section::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    border-right: 3px solid black;
+    animation: blink 1s steps(2) infinite;
+}
+
+/* Animation gõ chữ */
+@keyframes typing {
+    0%,
+    100% {
+        max-width: 0;
+    }
+    50% {
+        max-width: 100%;
+    }
+}
+
+/* Animation nhấp nháy con trỏ */
+@keyframes blink {
+    0%,
+    100% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: black;
+    }
+}
+
+.content {
+    padding: 0 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+/* Nhà Gái */
+.content-bride {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 1s ease-out;
+}
+.bride-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bride-img {
+    width: 50%;
+}
+.bride-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* Nhà Trai */
+.content-groom {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1s ease-out;
+}
+.groom-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.bride-section h2,
+.groom-section h2 {
+    font-family: var(--pairent-font);
+    font-size: 30px;
+}
+.parents p {
+    font-family: var(--pairent-font);
+    font-size: 20px;
+}
+.content-bride {
+    display: flex;
+}
+
+.content-groom {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.bride-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.groom-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bride-info img,
+.groom-info img {
+    width: 65px;
+    height: 65px;
+    animation: float 3s ease-in-out infinite, shake 1.5s ease-in-out infinite;
+}
+
+/* Bay bổng nhẹ nhàng */
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+.bride-img img,
+.groom-img img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4); /* Bóng đổ rõ hơn */
+}
+.name {
+    font-family: var(--name-bride-groom-font);
+    font-size: 30px;
+}
+.address,
+.role {
+    font-family: var(--address-font);
+    font-size: 20px;
+    font-weight: 350;
+    text-align: center;
+}
+.role {
+    font-size: 23px;
+}
+
+.content-bride.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.content-groom.show {
+    opacity: 1;
+    transform: translateX(0);
+}
