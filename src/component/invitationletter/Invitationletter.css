@@ -1,0 +1,343 @@
+.invitationletter {
+    background: url('../../assets/backgroundsilver.jpg') center/cover no-repeat;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 50px;
+    position: relative;
+}
+.invitationletter::after {
+    content: '';
+    display: block;
+    width: 25%;
+    height: 4px;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 40px;
+}
+.invitationletter-big-title {
+    margin-top: 40px;
+    padding-top: 40px;
+    font-family: var(--invitation-big-title-font);
+    font-size: 40px;
+    text-align: center;
+    width: 100%;
+}
+.invitationletter-title {
+    font-family: var(--invitation-title-font);
+    font-size: 25px;
+    width: 40%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.invitationletter-images {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.slider-item {
+    padding: 0 30px;
+    transition: all 1s ease;
+    display: flex !important;
+    align-items: center;
+    height: 450px;
+    position: relative;
+}
+
+.wedding-img {
+    width: 100%;
+    height: 350px;
+    border-radius: 1px;
+    object-fit: cover;
+    position: relative;
+    transition: all 1s ease;
+    transform-origin: center center;
+    padding: 2px;
+    background: linear-gradient(45deg, #ff6b6b, #4158d0, #ffd93d, #ff8e8e, #c850c0, #ff4d4d, #4158d0, #ffc0cb, #ff69b4);
+    background-size: 400% 400%;
+    animation: gradientBorder 8s ease infinite;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.wedding-img img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes gradientBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.slick-center .wedding-img {
+    height: 400px;
+    transform: scale(1.1);
+    transform-origin: center center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.wedding-img,
+.slick-center .wedding-img {
+    transition: all 1s ease, box-shadow 0.5s ease;
+}
+
+.invitation-info {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%;
+    max-width: 600px;
+    margin: 40px auto 0;
+    border: 2px solid #ab0707;
+    box-shadow: 0 10px 30px rgba(171, 7, 7, 0.1);
+    animation: floatIn 1s ease-out;
+}
+
+.info-title {
+    font-size: 28px;
+    white-space: nowrap;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    color: #ab0707;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 1s ease-out;
+    text-align: center;
+}
+
+.info-time {
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    animation: fadeInDown 1s ease-out 0.2s backwards;
+    text-align: center;
+}
+
+.info-date {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+    color: #000;
+    letter-spacing: 2px;
+    animation: fadeInDown 1s ease-out 0.4s backwards;
+    text-align: center;
+}
+
+.info-lunar {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    animation: fadeInDown 1s ease-out 0.6s backwards;
+    text-align: center;
+}
+
+.chibi-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 200px;
+    margin: 20px 0;
+}
+
+.chibi-img {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.chibi-img:first-child {
+    animation-delay: 0s;
+}
+
+.chibi-img:last-child {
+    animation-delay: 1s;
+}
+
+.invitation-btn {
+    background: linear-gradient(45deg, #dc3545, #ab0707);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 35px;
+    margin: 15px auto;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+    animation: fadeInUp 1s ease-out 0.8s backwards;
+    display: block;
+}
+
+.invitation-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+    background: linear-gradient(45deg, #ab0707, #dc3545);
+}
+
+/* Tùy chỉnh style cho nút prev/next nếu muốn hiển thị */
+.slick-prev,
+.slick-next {
+    display: none !important;
+}
+
+/* Tùy chỉnh style cho slider */
+.slick-track {
+    transition: all 1s cubic-bezier(0.87, 0.03, 0.41, 0.9);
+}
+
+.slick-slide {
+    opacity: 0.5;
+    transition: all 1s ease;
+}
+
+.slick-slide.slick-active {
+    opacity: 1;
+}
+
+.slick-slide.slick-center {
+    opacity: 1;
+}
+
+/* Ẩn dots navigation */
+.slick-dots {
+    display: none !important;
+}
+
+/* Đảm bảo slider không bị overflow hidden */
+.slick-slider {
+    overflow: visible !important;
+}
+
+.slick-list {
+    overflow: visible !important;
+    padding-bottom: 20px !important;
+}
+
+@media (max-width: 768px) {
+    .invitationletter-images {
+        width: 100%;
+        padding: 0 5px;
+    }
+
+    .slider-item {
+        padding: 0 10px;
+        height: 300px;
+    }
+
+    .wedding-img {
+        height: 200px;
+    }
+
+    .slick-center .wedding-img {
+        height: 250px;
+        transform: scale(1.2);
+        margin: 0 -10px;
+    }
+
+    .invitationletter-title {
+        width: 80%;
+        font-size: 20px;
+    }
+
+    .invitation-info {
+        padding: 20px;
+    }
+
+    .chibi-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .info-title {
+        font-size: 24px;
+    }
+
+    .info-time {
+        font-size: 18px;
+    }
+
+    .info-date {
+        font-size: 28px;
+    }
+
+    .info-lunar {
+        font-size: 14px;
+    }
+
+    .invitation-btn {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+}
+
+/* Animations */
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}

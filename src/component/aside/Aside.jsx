@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import './Aside.css';
-import background from '../../assets/backgroundsilver.jpg';
 import chibigroom from '../../assets/groom.png';
 import chibibride from '../../assets/bride.png';
 import anhcuoinam from '../../assets/anhcuoinam.jpg';
@@ -35,7 +34,7 @@ function Aside() {
 
     return (
         <div className="wedding-card">
-            <div className="top-section">Một hành trình mới bắt đầu từ hôm nay</div>
+            <div className="top-section">Một hành trình mới bắt đầu từ hôm nay ...</div>
             <div className="content">
                 <div className="content-bride">
                     <div className="bride-section">
