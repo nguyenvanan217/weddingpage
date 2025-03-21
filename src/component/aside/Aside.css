@@ -1,10 +1,11 @@
 .wedding-card {
-    background: url('../../assets/backgroundsilver.jpg') center/cover;
-    min-height: 100vh;
+    background: url('../../assets/backgroundsilver.jpg') center/cover no-repeat;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-bottom: 50px;
 }
 .top-section {
     font-family: var(--top-section-font);
@@ -13,7 +14,7 @@
     margin-top: 20px;
     white-space: nowrap;
     overflow: hidden;
-    width: 331px;
+    width: 351px;
     max-width: 0;
     animation: typing 8s steps(50, end) forwards infinite;
     position: relative;
