@@ -11,28 +11,27 @@
     overflow-x: hidden;
 } */
 html {
-  overflow-y: scroll;
-  overflow-x: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden; 
 }
 /* CSS cho toàn bộ thanh scrollbar */
 ::-webkit-scrollbar {
     width: 10px; /* Độ rộng thanh scrollbar */
-  }
-  
-  /* Background của thanh scrollbar */
-  ::-webkit-scrollbar-track {
+}
+
+/* Background của thanh scrollbar */
+::-webkit-scrollbar-track {
     background: white; /* Màu nền */
     border-radius: 5px; /* Bo góc */
-  }
-  
-  /* Phần kéo của scrollbar */
-  ::-webkit-scrollbar-thumb {
+}
+
+/* Phần kéo của scrollbar */
+::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, pink, white); /* Gradient từ hồng sang trắng */
     border-radius: 5px;
-  }
-  
-  /* Khi hover vào scrollbar */
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+/* Khi hover vào scrollbar */
+::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(180deg, hotpink, white);
-  }
-  
+}

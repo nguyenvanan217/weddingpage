@@ -14,7 +14,7 @@ const SnowEffect = () => {
         pointerEvents: "none",
       }}
     >
-      <Snowfall snowflakeCount={10} speed={[0.5, 1]} />
+      <Snowfall snowflakeCount={40} speed={[0.5, 1]} />
     </div>
   );
 };

@@ -14,13 +14,30 @@
     margin-top: 20px;
     white-space: nowrap;
     overflow: hidden;
-    width: 351px;
-    max-width: 0;
+    width: 416px;
     animation: typing 8s steps(50, end) forwards infinite;
     position: relative;
     border-right: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
-
+.heart-icon {
+    color: rgb(204, 5, 18);
+    animation: heart-icon 1s ease-in-out infinite;
+    margin-left: 5px;
+}
+@keyframes heart-icon {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 /* Tạo border mới bằng pseudo-element */
 .top-section::after {
     content: '';

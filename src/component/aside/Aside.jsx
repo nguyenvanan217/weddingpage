@@ -4,7 +4,7 @@ import chibigroom from '../../assets/groom.png';
 import chibibride from '../../assets/bride.png';
 import anhcuoinam from '../../assets/anhcuoinam.jpg';
 import anhcuoinu from '../../assets/anhcuoinu.jpg';
-
+import { FaHeart } from 'react-icons/fa';
 function Aside() {
     useEffect(() => {
         const observerOptions = {
@@ -34,7 +34,15 @@ function Aside() {
 
     return (
         <div className="wedding-card">
-            <div className="top-section">Một hành trình mới bắt đầu từ hôm nay ...</div>
+            <div className="top-section">
+                <span className="heart-icon">
+                    <FaHeart size={20} />
+                </span>
+                Một hành trình mới bắt đầu từ hôm nay ...
+                <span className="heart-icon">
+                    <FaHeart size={20} />
+                </span>
+            </div>
             <div className="content">
                 <div className="content-bride">
                     <div className="bride-section">

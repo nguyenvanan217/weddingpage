@@ -6,6 +6,9 @@
     flex-direction: column;
     padding-bottom: 50px;
     position: relative;
+    overflow: hidden;
+    transform: translateZ(0); /* Thêm GPU acceleration */
+    will-change: transform; /* Tối ưu performance */
 }
 .invitationletter::after {
     content: '';
@@ -40,6 +43,16 @@
     max-width: 1200px;
     margin: 30px auto;
     padding: 0 20px;
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0);
+}
+
+.slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    transform: translateZ(0);
 }
 
 .slider-item {
@@ -154,18 +167,11 @@
     text-align: center;
 }
 
-.chibi-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 200px;
-    margin: 20px 0;
-}
-
 .chibi-img {
     width: 70px;
     height: 70px;
-    flex-shrink: 0;
+    /* flex-shrink: 0; */
+    margin-bottom: 100px;
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
     animation: bounce 2s ease-in-out infinite;
 }
@@ -234,6 +240,9 @@
 /* Đảm bảo slider không bị overflow hidden */
 .slick-slider {
     overflow: visible !important;
+    transform: translateZ(0);
+    will-change: transform;
+    margin: 0 -20px; /* Bù trừ padding của container */
 }
 
 .slick-list {
@@ -242,24 +251,60 @@
 }
 
 @media (max-width: 768px) {
+    .invitationletter {
+        overflow-x: hidden;
+        width: 100vw;
+    }
     .invitationletter-images {
         width: 100%;
-        padding: 0 5px;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .slider-wrapper {
+        overflow: hidden;
+        margin: 0;
+        padding: 0 20px;
+    }
+
+    .slick-slider {
+        margin: 0;
     }
 
     .slider-item {
-        padding: 0 10px;
+        padding: 0 8px;
         height: 300px;
+        display: flex !important;
+        justify-content: center;
     }
 
     .wedding-img {
-        height: 200px;
+        height: 180px;
+        width: 95%;
+        margin: 0 auto;
+        transition: all 0.5s ease;
     }
 
     .slick-center .wedding-img {
-        height: 250px;
-        transform: scale(1.2);
-        margin: 0 -10px;
+        height: 220px;
+        transform: scale(1.15);
+        z-index: 3;
+        opacity: 1;
+        width: 100%;
+    }
+
+    .slick-slide:not(.slick-center) .wedding-img {
+        opacity: 0.7;
+        transform: scale(0.9);
+    }
+
+    .slick-slide {
+        transition: all 0.5s ease;
+    }
+
+    .slick-track {
+        display: flex !important;
+        align-items: center;
     }
 
     .invitationletter-title {
@@ -289,6 +334,7 @@
     }
 
     .info-lunar {
+        white-space: nowrap;
         font-size: 14px;
     }
 
