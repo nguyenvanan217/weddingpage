@@ -13,35 +13,65 @@ export default function Album() {
   const photos = usePhotos();
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
+    if (!albumRef.current) return;
+
+    // Animation cho tiêu đề
+    gsap.fromTo(
+      ".title-container",
+      { opacity: 0, y: -50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".title-container",
+          start: "top 80%", // Khi tiêu đề cách top 80% viewport
+          toggleActions: "play none none none", // Chạy 1 lần khi xuất hiện
+        },
+      }
+    );
+
+    // Dùng MutationObserver để chờ đến khi ảnh xuất hiện
+    const observer = new MutationObserver(() => {
       const images = albumRef.current.querySelectorAll("img");
-      images.forEach((img, index) => {
-        const columnIndex = index % 4; // Chia cột
+      if (images.length > 0) {
+        observer.disconnect(); // Ngừng theo dõi khi đã tìm thấy ảnh
+        runGsapAnimation(images);
+      }
+    });
 
-        // Xác định hướng animation
-        const direction = columnIndex < 2 ? -100 : 100;
+    observer.observe(albumRef.current, { childList: true, subtree: true });
 
-        gsap.fromTo(
-          img,
-          { x: direction, opacity: 0 },
-          {
-            x: 0,
-            opacity: 1,
-            duration: 1.5,
-            scrollTrigger: {
-              trigger: img,
-              start: "top 80%",
-              end: "bottom 20%",
-            },
-          }
-        );
-      });
-      return () => clearTimeout(timeout);
-    }, 1000);
+    return () => observer.disconnect();
   }, []);
+
+  const runGsapAnimation = (images) => {
+    images.forEach((img, index) => {
+      const columnIndex = index % 4;
+      const direction = columnIndex < 2 ? -100 : 100;
+
+      gsap.fromTo(
+        img,
+        { x: direction, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: img,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+  };
+
   return (
     <>
-      <div className="flex items-center justify-center gap-2 py-4">
+      <div className="flex items-center justify-center gap-2 py-4 title-container">
         <h1
           className="text-4xl md:text-5xl text-center font-normal"
           style={{

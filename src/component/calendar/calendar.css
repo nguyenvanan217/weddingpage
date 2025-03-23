@@ -7,8 +7,15 @@
 }
 .react-calendar__month-view__weekdays__weekday abbr{
     text-decoration: none;
-    font-size: 13px;
+    font-size: 17px;
     font-family: Arial, Helvetica, sans-serif;
+}
+.react-calendar__tile{
+    font-weight: 500;
+    font-size: 17px;
+}
+.react-calendar__tile--active {
+   color: rgb(43, 197, 197) !important;
 }
 .react-calendar__tile:hover{
     background-color: transparent !important;
@@ -24,7 +31,7 @@
 .day-today:focus{
     position: relative;
     background-color: transparent !important;
-    color: black !important;
+    color: rgb(255, 0, 238);
 }
 .day-today::after{
     position: absolute;
