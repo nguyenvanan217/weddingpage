@@ -11,7 +11,7 @@ import avtFive from '../../assets/invitationletteravt5.jpg';
 import avtSix from '../../assets/invitationletteravt6.jpg';
 import chibigroom from '../../assets/groom.png';
 import chibibride from '../../assets/bride.png';
-import ModalBankingMoney from '../modalBankingMoney/modalBankingMoney';
+import ModalBankingMoney from '../modalBankingMoney/ModalBankingMoney';
 
 function Invitationletter() {
     const [isModalOpen, setIsModalOpen] = useState(false);
