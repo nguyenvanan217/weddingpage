@@ -9,12 +9,12 @@
 }
 .top-section {
     font-family: var(--top-section-font);
-    font-size: 30px;
+    font-size: 27px;
     text-align: center;
     margin-top: 20px;
     white-space: nowrap;
     overflow: hidden;
-    width: 416px;
+    width: 382px;
     animation: typing 8s steps(50, end) forwards infinite;
     position: relative;
     border-right: none;
@@ -94,13 +94,17 @@
     flex-direction: column;
     align-items: center;
 }
-.bride-img {
+.bride-img,
+.groom-img {
     width: 50%;
+    height: 50%;
 }
-.bride-img img {
+.bride-img img,
+.groom-img img {
     width: 100%;
-    height: 100%;
+    height: 500px;
     object-fit: cover;
+    border-radius: 5px;
 }
 /* Nhà Trai */
 .content-groom {
@@ -145,6 +149,7 @@
     flex-direction: column;
     align-items: center;
 }
+
 .bride-info img,
 .groom-info img {
     width: 65px;
@@ -163,14 +168,6 @@
     }
 }
 
-.bride-img img,
-.groom-img img {
-    width: 300px;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 5px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4); /* Bóng đổ rõ hơn */
-}
 .name {
     font-family: var(--name-bride-groom-font);
     font-size: 30px;
@@ -194,4 +191,17 @@
 .content-groom.show {
     opacity: 1;
     transform: translateX(0);
+}
+@media (max-width: 768px) {
+    .bride-img,
+    .groom-img {
+        width: 50%;
+    }
+    .bride-img img,
+    .groom-img img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
 }
