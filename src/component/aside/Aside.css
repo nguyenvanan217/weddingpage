@@ -176,12 +176,11 @@
 .name {
     font-family: var(--name-bride-groom-font);
     font-size: 30px;
-    animation: fadeInUp 1.5s ease-out;
-    animation-delay: 1.2s;
     opacity: 0;
-    animation-fill-mode: forwards;
     color: #dd084f;
     font-weight: bold;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
 }
 .address,
 .role {
@@ -211,6 +210,14 @@
     opacity: 1;
     transform: translateX(0);
 }
+
+.content-bride.show .name,
+.content-groom.show .name {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 1.5s; /* Delay sau khi các phần tử khác đã hiển thị */
+}
+
 @media (max-width: 768px) {
     .bride-img,
     .groom-img {
@@ -287,6 +294,18 @@
     from {
         opacity: 0;
         transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Thêm keyframe mới cho animation slideUp */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
     to {
         opacity: 1;

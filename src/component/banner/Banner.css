@@ -177,7 +177,7 @@
     .avatar img {
         width: 68%;
         height: 50%;
-        border-radius: 40px;
+        border-radius: 15px;
         object-fit: cover;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     }
