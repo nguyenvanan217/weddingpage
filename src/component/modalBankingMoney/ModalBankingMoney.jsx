@@ -36,13 +36,13 @@ function ModalBankingMoney({ isOpen, onClose }) {
                     </div>
 
                     <div className="banking-info">
-                        <p className="bank-name">TECHCOMBANK</p>
-                        <p className="account-number">19036123456789</p>
-                        <p className="account-name">NGUYEN VAN HUNG</p>
+                        <p className="bank-name">VIETINBANK</p>
+                        <p className="account-number">107877010631</p>
+                        <p className="account-name">NGUYEN VAN AN</p>
                     </div>
 
                     <div className="transfer-note">
-                        <p className="note-title">Kính gửi Quý cô chú, anh chị và các bạn</p>
+                        <p className="note-title"><strong>Kính gửi Quý cô chú, anh chị và các bạn</strong></p>
                         <p className="note-content">
                             Khi chuyển khoản mừng cưới vợ chồng em, <br />
                             xin vui lòng ghi nội dung chuyển khoản theo cú pháp:

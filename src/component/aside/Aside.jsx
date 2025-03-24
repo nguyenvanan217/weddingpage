@@ -55,7 +55,7 @@ function Aside() {
                         <div className="bride-info">
                             <img src={chibibride} alt="Bride chibi" className="chibi-icon" />
                             <span className="role">Cô Dâu</span>
-                            <h3 className="name">Thuỳ Hằng</h3>
+                            <h3 className="name">Thuý Hằng</h3>
                         </div>
                     </div>
                     <div className="bride-img">

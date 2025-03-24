@@ -29,12 +29,12 @@ function App() {
   // }
 
   return (
-    <div>
+    <div className="test-overlay">
       <SnowEffect />
       <Banner />
       <Aside />
       <Invitationletter />
-      <div className="max-w-6xl m-auto px-2 ">
+      <div className="max-w-6xl m-auto px-2 z-10">
         <CalendarWedding />
         <Map />
         <Album />

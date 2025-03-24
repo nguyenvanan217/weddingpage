@@ -43,7 +43,7 @@
 .avatar img {
     width: 30%;
     height: 50%;
-    border-radius: 40px;
+    border-radius: 15px;
     object-fit: cover;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Bóng đổ rõ hơn */
 }
@@ -57,7 +57,6 @@
     font-family: Arial, sans-serif;
     font-weight: bold;
     font-size: 28px;
-    
 }
 
 /* Hiệu ứng trượt từ trái vào */
@@ -108,7 +107,8 @@
     margin-top: 10px;
     text-align: center;
     font-style: italic;
-    font-size: 23px;
+    font-size: 20px;
+    white-space: nowrap;
     opacity: 0;
     animation: fadeIn 2s ease-in forwards 1.8s;
 }

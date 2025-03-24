@@ -1,5 +1,6 @@
 .invitationletter {
-    background: url('https://thumbs.dreamstime.com/b/luxury-white-fabric-texture-background-high-resolution-295578864.jpghttps://static.vecteezy.com/system/resources/thumbnails/007/325/237/small/doodle-line-art-rose-flower-bouquet-on-paper-background-free-vector.jpg') center/cover no-repeat;
+    background: url('https://thumbs.dreamstime.com/b/luxury-white-fabric-texture-background-high-resolution-295578864.jpghttps://static.vecteezy.com/system/resources/thumbnails/007/325/237/small/doodle-line-art-rose-flower-bouquet-on-paper-background-free-vector.jpg')
+        center/cover no-repeat;
     width: 100%;
     display: flex;
     align-items: center;
@@ -7,8 +8,26 @@
     padding-bottom: 50px;
     position: relative;
     overflow: hidden;
-    transform: translateZ(0); /* Thêm GPU acceleration */
-    will-change: transform; /* Tối ưu performance */
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.invitation-btn {
+    background: linear-gradient(45deg, #dc3545, #ab0707);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 35px;
+    margin: 15px auto;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+    animation: fadeInUp 1s ease-out 0.8s backwards, heartbeat 1.5s ease-in-out infinite 2s;
+    display: block;
 }
 .invitationletter::after {
     content: '';
@@ -182,24 +201,6 @@
 
 .chibi-img:last-child {
     animation-delay: 1s;
-}
-
-.invitation-btn {
-    background: linear-gradient(45deg, #dc3545, #ab0707);
-    color: white;
-    border: none;
-    border-radius: 25px;
-    padding: 15px 35px;
-    margin: 15px auto;
-    font-size: 18px;
-    font-family: 'Montserrat', sans-serif;
-    cursor: pointer;
-    width: 100%;
-    max-width: 300px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
-    animation: fadeInUp 1s ease-out 0.8s backwards;
-    display: block;
 }
 
 .invitation-btn:hover {
