@@ -32,6 +32,24 @@ export default function Album() {
       }
     );
 
+    //Animation icon bottom
+    gsap.fromTo(
+      ".icon-bottom",
+      { rotation: -10 }, // Góc ban đầu
+      {
+        rotation: 10,
+        duration: 0.1,
+        repeat: 5, // Lặp lại 5 lần
+        yoyo: true, // Đảo ngược lại
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '.icon-bottom',
+          start: "top 80%", // Kích hoạt khi ảnh chạm 80% màn hình
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
     // Dùng MutationObserver để chờ đến khi ảnh xuất hiện
     const observer = new MutationObserver(() => {
       const images = albumRef.current.querySelectorAll("img");
@@ -99,13 +117,13 @@ export default function Album() {
         />
       </div>
       <div className="flex items-center justify-between gap-2 py-2">
-        <img src={heartPreview} alt="" className="w-16 sm:w-24 object-cover" />
+        <img src={heartPreview} alt="" className="w-16 sm:w-24 object-cover icon-bottom" />
         <img
           src={heartPreview}
           alt=""
           className="w-16 sm:w-24 object-cover -scale-x-100 opacity-25"
         />
-        <img src={heartPreview} alt="" className="w-16 sm:w-24 object-cover" />
+        <img src={heartPreview} alt="" className="w-16 sm:w-24 object-cover icon-bottom" />
       </div>
     </>
   );
