@@ -1,6 +1,6 @@
 import MapIcon from '../../assets/map.png';
 import MapLove from '../../assets/maplove.jpg';
-import './map.css';
+import './Map.css';
 const Map = () => {
     const handleClickMap = () => {
         window.open('https://www.google.com/maps/dir/?api=1&destination=65+Hùng+Vương+Hải+Châu,+Đà+Nẵng', '_blank');
@@ -16,7 +16,7 @@ const Map = () => {
                     className="w-35 h-20 object-cover animate-[wobble_1.5s_ease-in-out_infinite]"
                 />
                 <h1 className="text-[32px]" style={{ fontFamily: "'Great Vibes', cursive" }}>
-                     Địa điểm tổ chức
+                    Địa điểm tổ chức
                 </h1>
                 <div>
                     <img src={MapIcon} alt="" className="w-10 h-10" />
