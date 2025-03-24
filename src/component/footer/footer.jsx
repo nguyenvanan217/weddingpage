@@ -1,10 +1,10 @@
 const Footer = () => {
   return (
-    <div className="relative h-auto sm:h-[600px]">
+    <div className="relative h-[600px]">
       <img
         src="https://tuart.net/wp-content/uploads/2022/01/270284502_1589108414821889_2158477857562109361_n.jpg"
         alt=""
-        className="w-full h-full object-cover object-top"
+        className="w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-black bg-opacity-30 hover:bg-opacity-20 transition-all duration-300">
         <div
